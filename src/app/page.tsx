@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import PromiseCardMaker from "@/components/PromiseCardMaker";
 
 type Candidate = {
   station: string;
@@ -141,6 +142,10 @@ export default function Home() {
               </ul>
             </div>
           )}
+          <PromiseCardMaker
+            station={best.station}
+            friends={searched.map((name, i) => ({ name, minutes: best.minutes[i] }))}
+          />
         </section>
       )}
     </main>
